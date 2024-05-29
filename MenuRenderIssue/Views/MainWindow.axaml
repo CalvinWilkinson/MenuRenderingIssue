@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MenuRenderIssue.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="250"
+        x:Class="MenuRenderIssue.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Width="500" Height="350"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Menu Render Issue">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,Auto">
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+                <MenuItem Header="_File">
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="_New Project"/>
+                                <Label Content="(Ctrl + N)"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="_Open Project"/>
+                                <Label Content="(Ctrl + O)"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <Button Grid.Row="0" Width="150" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Flyout>
+                <Flyout>
+                    <Label Content="This is a flyout."/>
+                </Flyout>
+            </Button.Flyout>
+            Click For Flyout
+        </Button>
+    </Grid>
+</Window>

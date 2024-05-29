@@ -1,0 +1,24 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MenuRenderIssue.App"
+             xmlns:local="using:MenuRenderIssue"
+             xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
+             xmlns:generation="using:ActiproSoftware.UI.Avalonia.Themes.Generation"
+             RequestedThemeVariant="Dark">
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <!-- Using this theme causes the artifacts to be there but just much smaller. -->
+        <!-- <FluentTheme/> -->
+
+        <!-- Using this theme causes the artifacts to be larger and much more visible. -->
+        <actipro:ModernTheme AreNativeControlThemesEnabled="True">
+            <actipro:ModernTheme.Definition>
+                <generation:ThemeDefinition TabAppearanceKind="Subtle"/>
+            </actipro:ModernTheme.Definition>
+        </actipro:ModernTheme>
+    </Application.Styles>
+</Application>
